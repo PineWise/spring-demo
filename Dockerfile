@@ -16,7 +16,7 @@ ENV PW_HOME /opt/pinewise
 WORKDIR ${PW_HOME}
 # Download $GS_URL and unzip to $PW_HOME
 RUN apk --no-cache add openssl wget unzip bash libc6-compat &&\
-    mkdir -p ${PW_HOME}
+    mkdir -p ${PW_HOME}/work
 RUN apk add --no-cache nss
 RUN apk update && apk add --no-cache libc6-compat
 # Install kubernetes java client uber jar
