@@ -9,7 +9,7 @@ COPY src src
 RUN ./mvnw install -DskipTests
 #RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
-
+w
 FROM openjdk:8-alpine
 ENV PW_HOME /opt/pinewise
 
@@ -25,7 +25,7 @@ COPY --from=build /workspace/app/target/nbdemo-0.0.1-SNAPSHOT.jar ${PW_HOME}/
 
 RUN addgroup --gid 2000 -S pw_group &&\
     adduser -S pw_user -G pw_group --uid 1000 &&\
-    chown -R pw_user:pw_group ${PW_HOME}
+    chown -R pw_user:0 ${PW_HOME}
 
 USER pw_user
 RUN mkdir ${PW_HOME}/work
