@@ -28,6 +28,5 @@ RUN addgroup --gid 2000 -S pw_group &&\
     chown -R pw_user:0 ${PW_HOME}
 
 USER pw_user
-RUN mkdir ${PW_HOME}/work
 
 CMD ["./nbdemo-0.0.1-SNAPSHOT.jar"]
