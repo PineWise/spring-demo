@@ -9,7 +9,7 @@ COPY src src
 RUN ./mvnw install -DskipTests
 #RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
-w
+
 FROM openjdk:8-alpine
 ENV PW_HOME /opt/pinewise
 
